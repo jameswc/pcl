@@ -302,7 +302,7 @@ pcl::gpu::kinfuLS::KinfuTracker::allocateBufffers (int rows, int cols)
   sumbuf_.create (27);
 }
 
-inline void 
+void 
 pcl::gpu::kinfuLS::KinfuTracker::convertTransforms (Matrix3frm& rotation_in_1, Matrix3frm& rotation_in_2, Vector3f& translation_in_1, Vector3f& translation_in_2, Mat33& rotation_out_1, Mat33& rotation_out_2, float3& translation_out_1, float3& translation_out_2)
 {
   rotation_out_1 = device_cast<Mat33> (rotation_in_1);
@@ -311,7 +311,7 @@ pcl::gpu::kinfuLS::KinfuTracker::convertTransforms (Matrix3frm& rotation_in_1, M
   translation_out_2 = device_cast<float3>(translation_in_2);
 }
 
-inline void 
+void 
 pcl::gpu::kinfuLS::KinfuTracker::convertTransforms (Matrix3frm& rotation_in_1, Matrix3frm& rotation_in_2, Vector3f& translation_in, Mat33& rotation_out_1, Mat33& rotation_out_2, float3& translation_out)
 {
   rotation_out_1 = device_cast<Mat33> (rotation_in_1);
@@ -319,14 +319,14 @@ pcl::gpu::kinfuLS::KinfuTracker::convertTransforms (Matrix3frm& rotation_in_1, M
   translation_out = device_cast<float3>(translation_in);
 }
 
-inline void 
+void 
 pcl::gpu::kinfuLS::KinfuTracker::convertTransforms (Matrix3frm& rotation_in, Vector3f& translation_in, Mat33& rotation_out, float3& translation_out)
 {
   rotation_out = device_cast<Mat33> (rotation_in);  
   translation_out = device_cast<float3>(translation_in);
 }
 
-inline void
+void
 pcl::gpu::kinfuLS::KinfuTracker::prepareMaps (const DepthMap& depth_raw, const Intr& cam_intrinsics)
 {
   // blur raw map
@@ -349,7 +349,7 @@ pcl::gpu::kinfuLS::KinfuTracker::prepareMaps (const DepthMap& depth_raw, const I
   
 }
 
-inline void
+void
 pcl::gpu::kinfuLS::KinfuTracker::saveCurrentMaps()
 {
   Matrix3frm rot_id = Eigen::Matrix3f::Identity ();
