@@ -242,7 +242,7 @@ namespace pcl
             return (has_shifted_);
           }
 
-        private:
+        protected:
           
           /** \brief Allocates all GPU internal buffers.
             * \param[in] rows_arg
