@@ -289,7 +289,7 @@ if(WITH_FZAPI)
 endif(WITH_FZAPI)
 
 # IDS-Imaging - Ensenso
-option(WITH_ENSENSO "Build IDS-Imaging Ensenso's camera support" TRUE)
+option(WITH_ENSENSO "Build IDS-Imaging Ensenso's camera support" FALSE)
 if(WITH_ENSENSO)
   set(ENSENSO_ABI_DIR "$ENV{PROGRAMW6432}/Ensenso/development/c" CACHE PATH "directory of Ensenso ABI")
   find_package(Ensenso) # FindEnsenso.cmake

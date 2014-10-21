@@ -138,7 +138,7 @@ if(build)
     endif(FZAPI_FOUND)
 
     ## Ensenso
-    OPTION(BUILD_ENSENSO "Build the Ensenso Grabber." ON)
+	OPTION(BUILD_ENSENSO "Build the Ensenso Grabber." OFF)
     MARK_AS_ADVANCED(BUILD_ENSENSO)
     if(NOT BUILD_ENSENSO)
       # Set ENSENSO_FOUND to false locally to avoid building anything Ensenso related
