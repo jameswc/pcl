@@ -391,6 +391,16 @@ namespace pcl
       void 
       convert (const MapArr& vmap, DeviceArray2D<T>& output);
 
+      /** \brief Conversion from SOA to AOS
+      	  * \param[in] vmap SOA map
+      	  * \param[out] output Array of 3D points. Can be float4 or float8.
+      	  */
+    	template<typename T> 
+    	void 
+    	convertWithConstraint (const MapArr& vmap, DeviceArray2D<T>& output, float absMax);
+
+
+
       /** \brief Merges pcl::PointXYZ and pcl::Normal to PointNormal
         * \param[in] cloud points cloud
         * \param[in] normals normals cloud

@@ -197,6 +197,13 @@ namespace pcl
           void
           getLastFrameCloud (DeviceArray2D<PointType>& cloud) const;
 
+		  /** \brief Returns point cloud observed from the last camera pose limiting the values to the absolute value of the max
+          *	 \param[out] cloud output array for points
+		  */
+		  void
+          getLastFrameCloudWithConstraint (DeviceArray2D<PointType>& cloud, float absMax) const;
+
+
           /** \brief Returns point cloud abserved from last camera pose
             * \param[out] normals output array for normals
             */

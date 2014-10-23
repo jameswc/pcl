@@ -796,6 +796,14 @@ pcl::gpu::kinfuLS::KinfuTracker::getLastFrameCloud (DeviceArray2D<PointType>& cl
   DeviceArray2D<float4>& c = (DeviceArray2D<float4>&)cloud;
   convert (vmaps_g_prev_[0], c);
 }
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+void
+pcl::gpu::kinfuLS::KinfuTracker::getLastFrameCloudWithConstraint (DeviceArray2D<PointType>& cloud, float absMax) const
+{
+  cloud.create (rows_, cols_);
+  DeviceArray2D<float4>& c = (DeviceArray2D<float4>&)cloud;
+  convertWithConstraint (vmaps_g_prev_[0], c, absMax);
+}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void
